@@ -80,7 +80,15 @@ const config = {
   parserOptions: {
     project: ['tsconfig.json'],
   },
-  ignorePatterns: ['build/', '.turbo/', 'dist/', 'node_modules/', '*.js', '*.jsx'],
+  ignorePatterns: [
+    'build/',
+    '.turbo/',
+    'dist/',
+    'node_modules/',
+    '*.js',
+    '*.jsx',
+    'misuku/api.tsx',
+  ],
 };
 
 module.exports = config;

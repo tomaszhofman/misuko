@@ -1,0 +1,7 @@
+fragment PageHeroDetails on Hero {
+    title
+    image {
+        url
+    }
+    slug
+}

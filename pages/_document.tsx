@@ -5,8 +5,25 @@ export default function Document() {
     <Html>
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href={'public/fonts/BeausiteClassicBold.woff2'}
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href={'public/fonts/BeausiteClassicMedium.woff2'}
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href={'public/fonts/BeausiteClassicRegular.woff2'}
+          crossOrigin="anonymous"
         />
       </Head>
       <body>

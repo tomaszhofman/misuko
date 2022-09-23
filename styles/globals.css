@@ -5,3 +5,29 @@
 body {
   background-color: #fcf9ee;
 }
+
+@layer base {
+  @font-face {
+    font-family: 'Beausite';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/BeausiteClassicBold.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Beausite';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/BeausiteClassicMedium.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Beausite';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/BeausiteClassicRegular.woff2') format('woff2');
+  }
+}
