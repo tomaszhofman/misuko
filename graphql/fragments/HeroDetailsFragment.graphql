@@ -1,0 +1,9 @@
+
+fragment HeroDetails on Hero {
+    id
+    title
+    image {
+        url
+        fileName
+    }
+}

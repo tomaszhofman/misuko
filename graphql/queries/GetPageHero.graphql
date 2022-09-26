@@ -1,5 +1,0 @@
-query GetPageHero {
-    hero(where: { id: "cl876jiv172i30bun0qj9av1h" }) {
-       ...PageHeroDetails
-    }
-}

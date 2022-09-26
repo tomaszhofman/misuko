@@ -1,0 +1,11 @@
+query HomePage($slug: String!) {
+    page(where: {slug: $slug}) {
+        title
+        hero {
+            ...HeroDetails
+        }
+        features {
+            ...FeatureDetails
+        }
+    }
+}

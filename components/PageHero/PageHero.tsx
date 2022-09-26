@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
 import Link from 'next/link';
 
-import { PageHeroDetailsFragment } from '../../misuku/api';
+import { HeroDetailsFragment } from '../../misuku/api';
 
 type PageHeroProps = {
-  data: PageHeroDetailsFragment;
+  data: HeroDetailsFragment;
 };
 
 export const PageHero = ({ data }: PageHeroProps) => {
@@ -34,10 +34,11 @@ export const PageHero = ({ data }: PageHeroProps) => {
         {/*TODO: Add alt text in database*/}
         <Image
           alt={'some text that describes image'}
-          className={'absolute h-full w-full'}
           src={data.image.url}
-          layout="fill"
-          objectFit="cover"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="w-full object-cover md:h-full"
         />
       </div>
     </section>

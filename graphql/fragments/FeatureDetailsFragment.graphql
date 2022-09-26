@@ -1,0 +1,9 @@
+fragment FeatureDetails on Feature {
+    id
+    title
+    content
+    image {
+        url
+        fileName
+    }
+}

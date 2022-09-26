@@ -4,24 +4,30 @@ import Head from 'next/head';
 
 import apolloClient from '@/lib/graphql';
 
+import { Features } from '@/components/Features';
 import { PageHero } from '@/components/PageHero';
 
-import { GetPageHeroDocument, GetPageHeroQuery } from '../misuku/api';
+import { HomePageDocument, HomePageQuery, HomePageQueryVariables } from '../misuku/api';
 
 export const getStaticProps = async () => {
-  const response: ApolloQueryResult<GetPageHeroQuery> = await apolloClient.query<GetPageHeroQuery>({
-    query: GetPageHeroDocument,
+  const response: ApolloQueryResult<HomePageQuery> = await apolloClient.query<
+    HomePageQuery,
+    HomePageQueryVariables
+  >({
+    query: HomePageDocument,
+    variables: { slug: ' ' },
   });
 
   return {
     props: {
-      data: response.data.hero,
+      hero: response.data.page?.hero,
+      features: response.data.page?.features,
     },
   };
 };
 
-const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!data) {
+const Home = ({ hero, features }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  if (!hero || !features) {
     return;
   }
   return (
@@ -32,7 +38,8 @@ const Home = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <PageHero data={data} />
+      <PageHero data={hero} />
+      <Features data={features} />
     </div>
   );
 };
