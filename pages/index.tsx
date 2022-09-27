@@ -6,6 +6,7 @@ import apolloClient from '@/lib/graphql';
 
 import { Features } from '@/components/Features';
 import { PageHero } from '@/components/PageHero';
+import { Testimonials } from '@/components/Testimonials';
 
 import { HomePageDocument, HomePageQuery, HomePageQueryVariables } from '../misuku/api';
 
@@ -22,12 +23,13 @@ export const getStaticProps = async () => {
     props: {
       hero: response.data.page?.hero,
       features: response.data.page?.features,
+      testimonials: response.data.page?.testimonials,
     },
   };
 };
 
-const Home = ({ hero, features }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!hero || !features) {
+const Home = ({ hero, features, testimonials }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  if (!hero || !features || !testimonials) {
     return;
   }
   return (
@@ -40,6 +42,7 @@ const Home = ({ hero, features }: InferGetStaticPropsType<typeof getStaticProps>
 
       <PageHero data={hero} />
       <Features data={features} />
+      <Testimonials data={testimonials} />
     </div>
   );
 };

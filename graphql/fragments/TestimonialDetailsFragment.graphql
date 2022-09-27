@@ -1,0 +1,5 @@
+
+fragment  TestimonialDetail on Testimonial {
+    author
+    content
+}
