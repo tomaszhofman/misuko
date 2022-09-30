@@ -44,16 +44,18 @@ export const Testimonials = ({ data }: TestimonialsProps) => {
               </SwiperSlide>
             );
           })}
-          <button
+          <div
             className={
-              ' invisible top-0 right-0 h-full w-20 transform transition-all duration-500  ease-in-out  lg:absolute lg:z-10 lg:group-hover:visible  lg:group-hover:-translate-x-11 '
+              'invisible top-0 right-0 flex h-full w-20 transform items-center justify-center transition-all duration-500  ease-in-out  lg:absolute lg:z-10 lg:group-hover:visible  lg:group-hover:-translate-x-11 '
             }
-            onClick={() => swiperRef.current?.slideNext()}
           >
-            <button className={'flex h-6 w-6 items-center justify-center rounded-full bg-black'}>
+            <button
+              className={' flex h-6 w-6 items-center justify-center rounded-full bg-black'}
+              onClick={() => swiperRef.current?.slideNext()}
+            >
               <FiArrowRight className={'text-amber-50'} />
             </button>
-          </button>
+          </div>
           <button
             className={
               'invisible top-0 left-0 inline-block h-full w-20 transform text-left   transition-all duration-500 ease-in-out lg:absolute lg:z-10 lg:group-hover:visible  lg:group-hover:translate-x-11'
